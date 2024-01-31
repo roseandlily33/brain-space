@@ -15,9 +15,6 @@
   flex-direction: column;
   align-items: center;
 }
-.rank{
-
-}
 .form{
   background-color: hsla(317, 98%, 75%, 0.6);
   border-radius: 15px;
@@ -43,4 +40,12 @@ input{
   border-radius: 15px;
   border: 2px solid #fe80da;
   width: 100%;
+}
+.face-box{
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-self: center;
+  box-shadow: 0 0 0 3px #1496df inset;
+
 }
