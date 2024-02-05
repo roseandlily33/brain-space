@@ -1,9 +1,8 @@
-const ImageLinkForm = ({input, onInputChange, onSubmit, calculateFaceLocation}) => {
-
+const ImageLinkForm = (props) => {
+const {input, onInputChange, onSubmit, calculateFaceLocation} = props;
 const PAT = 'e9ccfcd6d8d24da6b4b6e618e99c442c';
 const USER_ID = 'clarifai';
 const APP_ID = 'main';
-// Change these to whatever model and image URL you want to use
 const MODEL_ID = 'face-detection';
 const MODEL_VERSION_ID = '6dc7e46bc9124c5c8824be4822abe105';
 const IMAGE_URL = 'https://plus.unsplash.com/premium_photo-1692574096082-d2b425cf1a5b?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
@@ -50,7 +49,6 @@ fetch("https://api.clarifai.com/v2/models/" + MODEL_ID + "/versions/" + MODEL_VE
             const rightCol = boundingBox.right_col.toFixed(3);
 
             region.data.concepts.forEach(concept => {
-                // Accessing and rounding the concept value
                 const name = concept.name;
                 const value = concept.value.toFixed(4);
 
@@ -61,6 +59,27 @@ fetch("https://api.clarifai.com/v2/models/" + MODEL_ID + "/versions/" + MODEL_VE
 
     })
     .catch(error => console.log('error', error));
+
+    // const updateRank = async() => {
+    //     let firstStep = await onSubmit();
+    //    // const id = get the users id
+    //     if(firstStep){
+    //         let fetching = await fetch('http://localhost:3004/image', {
+    //             method: 'put',
+    //             headers: {
+    //                 'Content-Type': 'application/json'
+    //             },
+    //             body: 
+    //                 JSON.stringify({
+    //                     id: id
+    //                 })
+    //         })
+    //         if(fetching){
+
+    //         }
+    //     }
+      
+    // }
 
     return (
     <div className="form middle">
