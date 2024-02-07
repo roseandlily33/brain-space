@@ -19,7 +19,7 @@ const SignInForm = ({setUser, setSignIn}) => {
         e.preventDefault();
         const { email, password } = formFields;
         if(email && password){
-         const response = await fetch('http://localhost:3004/signin', {
+         const response = await fetch('https://brain-space-backend.onrender.com/signin', {
                 method: 'post',
                 headers: {
                     'Content-Type': 'application/json'
@@ -49,7 +49,7 @@ const SignInForm = ({setUser, setSignIn}) => {
              type="email" name="email" value={email} onChange={handleChange} placeholder="Email" required/>
              <FormInput label=""
              type="password" name="password" value={password} onChange={handleChange} placeholder="Password" required/>
-           <input type="submit" value="Sign In" />     
+           <input type="submit" value="Sign In" className="button" />     
         </form>
         </div>
       );
